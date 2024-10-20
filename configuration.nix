@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./storage-configuration.nix
     ];
 
   # Bootloader.
@@ -15,7 +16,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-ae0c12ee-1019-4297-80b3-13fd8f584a5c".device = "/dev/disk/by-uuid/ae0c12ee-1019-4297-80b3-13fd8f584a5c";
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixostest"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
