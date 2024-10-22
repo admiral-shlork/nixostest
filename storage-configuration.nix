@@ -25,19 +25,15 @@
     [ { device = "/dev/disk/by-uuid/2bf6e350-a2eb-4066-9b26-a6d80e8d99ab"; }
     ];
 
-  # Ensure the directories exist
-  systemd.tmpfiles.rules = [
-    "d /home/whatever/mnt 0755 whatever users -"
-    "d /home/whatever/mnt/alpha 0755 whatever users -"
-  ];
-
+  # Configuration for LUKS containers and key files
   environment.etc.crypttab.text = ''
     cryptalpha UUID=7ea08437-c533-430e-80f0-cac6bbbf64f4 /root/alpha.key
   '';
 
-
   fileSystems."/home/whatever/mnt/alpha" =
     { device = "/dev/disk/by-uuid/dd5b72a9-9f91-4ec9-9ba2-fefcb8cc9348";
       fsType = "ext4";
+      options = ["defaults" "X-mount.mkdir"];
     };
+
 }
