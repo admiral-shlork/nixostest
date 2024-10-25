@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, modulesPath, ... }:
 
 {
   # Bootloader
@@ -38,7 +38,7 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  # alpha partition dd5b72a9-9f91-4ec9-9ba2-fefcb8cc9348
+  # alpha partition - dd5b72a9-9f91-4ec9-9ba2-fefcb8cc9348
   fileSystems."/home/whatever/mnt/alpha" =
     { device = "/dev/disk/by-uuid/dd5b72a9-9f91-4ec9-9ba2-fefcb8cc9348";
       fsType = "ext4";
