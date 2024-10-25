@@ -9,10 +9,21 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # LUKS container with swap partition - ae0c12ee-1019-4297-80b3-13fd8f584a5c
-  boot.initrd.luks.devices."luks-ae0c12ee-1019-4297-80b3-13fd8f584a5c".device = "/dev/disk/by-uuid/ae0c12ee-1019-4297-80b3-13fd8f584a5c";
-  # LUKS container with root partition - 99538367-5ab3-44a5-ad19-03b2b382b8ee
-  boot.initrd.luks.devices."luks-99538367-5ab3-44a5-ad19-03b2b382b8ee".device = "/dev/disk/by-uuid/99538367-5ab3-44a5-ad19-03b2b382b8ee";
+  boot.initrd.luks.devices = let
+    swap_uuid = "ae0c12ee-1019-4297-80b3-13fd8f584a5c";
+    root_uuid = "99538367-5ab3-44a5-ad19-03b2b382b8ee";
+  in {
+    # LUKS container with swap partition
+    "luks-${swap_uuid}" = {
+      device = "/dev/disk/by-uuid/${swap_uuid}";
+      allowDiscards = true;
+    };
+    # LUKS container with root partition
+    "luks-${root_uuid}" = {
+      device = "/dev/disk/by-uuid/${root_uuid}";
+      allowDiscards = true;
+    };
+  };
 
   # Configuration for LUKS containers and key files
   # LUKS container with alpha partition - 7ea08437-c533-430e-80f0-cac6bbbf64f4

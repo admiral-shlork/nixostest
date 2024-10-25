@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Make sure to partition and label everything correctly. See `fileSystems` config for the host to see the required label names.
+See `fileSystems` config for the host and create necessary partitions.
 
 
 ## Installation
