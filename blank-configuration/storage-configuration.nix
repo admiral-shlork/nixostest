@@ -1,29 +1,33 @@
 { config, pkgs, modulesPath, ... }:
 
 {
+boot = {
   # Bootloader
-  boot.initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
-  boot.extraModulePackages = [ ];
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  initrd.availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "ahci" "sd_mod" "sr_mod" ];
+  initrd.kernelModules = [ ];
+  kernelModules = [ ];
+  extraModulePackages = [ ];
+  loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
-  boot.initrd.luks.devices = let
-    swap_uuid = "ae0c12ee-1019-4297-80b3-13fd8f584a5c";
-    root_uuid = "99538367-5ab3-44a5-ad19-03b2b382b8ee";
+  initrd.luks.devices = let
+    luks_swap_uuid = "ae0c12ee-1019-4297-80b3-13fd8f584a5c";
+    luks_root_uuid = "99538367-5ab3-44a5-ad19-03b2b382b8ee";
   in {
     # LUKS container with swap partition
-    "luks-${swap_uuid}" = {
-      device = "/dev/disk/by-uuid/${swap_uuid}";
+    "luks-${luks_swap_uuid}" = {
+      device = "/dev/disk/by-uuid/${luks_swap_uuid}";
       allowDiscards = true;
     };
     # LUKS container with root partition
-    "luks-${root_uuid}" = {
-      device = "/dev/disk/by-uuid/${root_uuid}";
+    "luks-${luks_root_uuid}" = {
+      device = "/dev/disk/by-uuid/${luks_root_uuid}";
       allowDiscards = true;
     };
   };
+};
 
   # Configuration for LUKS containers and key files
   # LUKS container with alpha partition - 7ea08437-c533-430e-80f0-cac6bbbf64f4
