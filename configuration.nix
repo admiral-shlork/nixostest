@@ -9,18 +9,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./storage-configuration.nix
+      ./networking-configuration.nix
     ];
-
-  
-  networking.hostName = "nixostest"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

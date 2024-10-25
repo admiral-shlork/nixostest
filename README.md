@@ -16,7 +16,7 @@ nix --extra-experimental-features "nix-command flakes" shell nixpkgs#git
 ```
 3. Mount all required partitions under `/mnt`.
 
-3.1 On new hardware, consider  running `nixos-generate-config` and examine the `configuration.nix` and `hardware-configuration.nix` to see if any declarations are required to be added to the configuration.
+- On new hardware, consider  running `nixos-generate-config` and examine the `configuration.nix` and `hardware-configuration.nix` to see if any declarations are required to be added to the configuration.
 
 4. Clone the repo with the configuration:
 
