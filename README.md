@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-See `fileSystems` config for the host and create necessary partitions.
+See `fileSystems` config for the host and create necessary partitions. For existing partitions, make sure to update `fileSystems` to reflect how storage is set up.
 
 
 ## Installation
@@ -12,7 +12,7 @@ See `fileSystems` config for the host and create necessary partitions.
 2. Enter shell with git:
 
 ```bash
-nix --extra-experimental-features "nix-command flakes" shell nixpkgs#git
+nix --extra-experimental-features "nix-command flakes" shell nixpkgs#git nixpkgs#vim
 ```
 3. Mount all required partitions under `/mnt`.
 
