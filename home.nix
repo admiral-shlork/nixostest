@@ -12,14 +12,19 @@
       # deadbeef-with-plugins
       # deluge-gtk
       # discord
+      # docker
+      # dropbox
       # easytag
       # element-desktop
       # evince
       # firefox-devedition
+      gnome.gnome-screenshot
+      # jetbrains.pycharm-community
       # keepassxc
       # libreoffice
       # librewolf
       # lutris
+      # megasync
       # obsidian
       # parsec-bin
       # protonvpn-gui
@@ -32,6 +37,7 @@
       # ungoogled-chromium
       # virtualbox
       # vivaldi
+      # veracrypt
       # vlc
       # yacreader
     ];
@@ -73,7 +79,7 @@
       night-light-schedule-automatic = true;
     };
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']";
+      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" ];
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>e";
@@ -85,6 +91,11 @@
       command = "/run/current-system/sw/bin/terminator";
       name = "Terminator";
     };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
+      binding = "Print";
+      command = "/etc/profiles/per-user/whatever/bin/gnome-screenshot --interactive";
+      name = "Screenshot";
+    };
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = with pkgs.gnomeExtensions; [
@@ -94,6 +105,9 @@
         night-theme-switcher.extensionUuid
         notifications-alert-on-user-menu.extensionUuid
       ];
+    };
+    "org/gnome/shell/keybindings" = {
+        show-screenshot-ui = [];
     };
     "org/gnome/shell/extensions/dash-to-panel" = {
       panel-sizes = "{\"0\":36}";
