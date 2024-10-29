@@ -43,4 +43,36 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  # Minimal gnome installation
+  environment.gnome.excludePackages =
+    (with pkgs; [
+      gedit
+      gnome-console
+      gnome-connections
+      gnome-photos
+      gnome-tour
+      simple-scan
+      snapshot
+      yelp
+    ])
+    ++ (with pkgs.gnome; [
+      atomix
+      cheese
+      epiphany
+      evince
+      geary
+      gnome-calendar
+      gnome-characters
+      gnome-contacts
+      gnome-maps
+      gnome-music
+      gnome-software
+      gnome-terminal
+      gnome-weather
+      hitori
+      iagno
+      tali
+      totem
+    ]);
 }
