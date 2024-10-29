@@ -54,16 +54,16 @@
       panel-element-positions = ''
       {"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"}]}
       '';
-    };
-    settings."org/gnome/shell/extensions/date-menu-formatter" = {
-      pattern = "MM\ndd\nyy\nE\nHH\nmm\nss";
-      text-align = "right";
-      update-level = "2";
       dot-position = "BOTTOM";
       dot-style-focust = "SQUARES";
       dot-style-unfocused = "SQUARES";
       scroll-icon-action = "PASS_THROUGH";
       scroll-panel-action = "CHANGE_VOLUME";
+    };
+    settings."org/gnome/shell/extensions/date-menu-formatter" = {
+      pattern = "MM\ndd\nyy\nE\nHH\nmm\nss";
+      text-align = "right";
+      update-level = "2";
     };
     settings."org/gnome/shell/extensions/caffeine" = {
       indicator-position-max = "2";
