@@ -19,10 +19,6 @@
 
   # Install firefox.
   programs.firefox.enable = true;
-  programs.home-manager.enable = true;
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
 
   # Define your user-specific home configuration
   users.users.whatever = {
