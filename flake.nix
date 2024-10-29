@@ -13,7 +13,7 @@
     # nixpkgs.url = "nixpkgs/{BRANCH-NAME}";
   };
 
-  outputs = { self, nixpkgs, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }:
     let
       lib = nixpkgs.lib;
     in {
