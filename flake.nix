@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.05";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # use the following for unstable:
     # nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -18,7 +20,10 @@
       nixosConfigurations = {
         nixostest = lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./configuration.nix ];
+          modules = [ 
+            ./configuration.nix
+            home-manager.nixosModules.home-manager
+          ];
       };
     };
   };

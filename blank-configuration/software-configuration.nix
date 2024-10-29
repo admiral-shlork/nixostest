@@ -19,7 +19,17 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.home-manager.enable = true;
 
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+
+  # Define your user-specific home configuration
+  users.users.whatever = {
+    isNormalUser = true;
+    home = "/home/whatever";
+    # Add more configurations for your user here
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
