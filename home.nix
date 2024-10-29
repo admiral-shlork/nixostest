@@ -10,9 +10,8 @@
     lutris
   ];
 
-  # Additional settings like programs, services, etc.
-  programs.home-manager.enable = true;
-
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
+  users.users.whatever = {
+    isNormalUser = true;
+    home = "/home/whatever";
+  };
 }

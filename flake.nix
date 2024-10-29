@@ -22,13 +22,16 @@
       nixosConfigurations = {
         nixostest = lib.nixosSystem {
           inherit system;
-          modules = [ ./configuration.nix ];
-        };
-      };
-      homeConfigurations = {
-        whatever = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./home.nix ];
+          modules = [ 
+            ./configuration.nix
+            home-manager.nixosModules.home-manager {
+              home-manager = {
+                users.whatever = import "./home.nix";
+                useGlobalPkgs = true;
+                useUserPackages = true;
+              };
+            }
+          ];
         };
       };
   };
