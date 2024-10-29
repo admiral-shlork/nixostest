@@ -7,9 +7,10 @@
     homeDirectory = "/home/whatever";
     stateVersion = "24.05";
     packages = with pkgs; [
-      librewolf
-      lutris
+      # librewolf
+      # lutris
       gnome.dconf-editor
+      # evince
     ];
   };
 
@@ -33,11 +34,40 @@
       default-visible-columns = "['name', 'size', 'type', 'owner', 'group', 'permissions', 'date_modified']";
       use-tree-view = true;
     };
+    settings."org/gnome/desktop/notifications" = {
+      show-in-lock-screen = false;
+    };
+    settings."org/gnome/desktop/wm/keybindings" = {
+      button-layout = "close:appmenu";
+      action-right-click-titlebar = "minimize";
+      action-middle-click-titlebar = "lower";
+      num-workspaces = 1;
+    };
     settings."org/gnome/desktop/wm/preferences" = {
       button-layout = "close:appmenu";
       action-right-click-titlebar = "minimize";
       action-middle-click-titlebar = "lower";
-      num-workspaces = "1";
+      num-workspaces = 1;
+    };
+    settings."org/gnome/mutter" = {
+      edge-tiling = true;
+    };
+    settings."org/gnome/settings-daemon/plugins/color" = {
+      night-light-enabled = true;
+      night-light-schedule-automatic = true;
+    };
+    settings."org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']";
+    };
+    settings."org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>e";
+      command = "/run/current-system/sw/bin/nautilus --new-window";
+      name = "Nautilus";
+    };
+    settings."org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>w";
+      command = "/run/current-system/sw/bin/terminator";
+      name = "Terminator";
     };
     settings."org/gnome/shell" = {
       disable-user-extensions = false;
