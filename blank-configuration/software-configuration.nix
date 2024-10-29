@@ -31,6 +31,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    gnome.dconf-editor
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-panel
     gnomeExtensions.date-menu-formatter

@@ -7,69 +7,85 @@
     homeDirectory = "/home/whatever";
     stateVersion = "24.05";
     packages = with pkgs; [
+      # audacity
+      # calibre
+      # deadbeef-with-plugins
+      # deluge-gtk
+      # discord
+      # easytag
+      # element-desktop
+      # evince
+      # firefox-devedition
+      # keepassxc
+      # libreoffice
       # librewolf
       # lutris
-      gnome.dconf-editor
-      # evince
+      # obsidian
+      # parsec-bin
+      # protonvpn-gui
+      # signal-desktop
+      # soulseekqt
+      # soundconverter
+      # steam
+      # telegram-desktop
+      # thunderbird
+      # ungoogled-chromium
+      # virtualbox
+      # vivaldi
+      # vlc
+      # yacreader
     ];
   };
 
-  dconf = {
-    enable = true;
-    settings."org/gnome/system/location" = {
+  dconf.settings = {
+    "org/gnome/system/location" = {
       enabled = true;
       max-accuracy-level = "exact";
     };
-    settings."org/gnome/nautilus/preferences" = {
+    "org/gnome/nautilus/preferences" = {
       date-time-format = "datailed";
       default-folder-view = "list-view";
       show-create-link = true;
       show-delete-permanently = true;
     };
-    settings."org/gnome/nautilus/icon-view" = {
+    "org/gnome/nautilus/icon-view" = {
       captions = "['size', 'type', 'none']";
     };
-    settings."org/gnome/nautilus/list-view" = {
+    "org/gnome/nautilus/list-view" = {
       default-column-order = "['name', 'size', 'type', 'owner', 'group', 'permissions', 'date_modified', 'date_accessed', 'date_created', 'recency', 'detailed_type']";
       default-visible-columns = "['name', 'size', 'type', 'owner', 'group', 'permissions', 'date_modified']";
       use-tree-view = true;
     };
-    settings."org/gnome/desktop/notifications" = {
+    "org/gnome/desktop/notifications" = {
       show-in-lock-screen = false;
     };
-    settings."org/gnome/desktop/wm/keybindings" = {
+    "org/gnome/desktop/wm/preferences" = {
       button-layout = "close:appmenu";
       action-right-click-titlebar = "minimize";
       action-middle-click-titlebar = "lower";
       num-workspaces = 1;
     };
-    settings."org/gnome/desktop/wm/preferences" = {
-      button-layout = "close:appmenu";
-      action-right-click-titlebar = "minimize";
-      action-middle-click-titlebar = "lower";
-      num-workspaces = 1;
-    };
-    settings."org/gnome/mutter" = {
+    "org/gnome/mutter" = {
       edge-tiling = true;
     };
-    settings."org/gnome/settings-daemon/plugins/color" = {
+    "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
       night-light-schedule-automatic = true;
     };
-    settings."org/gnome/settings-daemon/plugins/media-keys" = {
+    "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']";
     };
-    settings."org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>e";
       command = "/run/current-system/sw/bin/nautilus --new-window";
       name = "Nautilus";
     };
-    settings."org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
       binding = "<Super>w";
       command = "/run/current-system/sw/bin/terminator";
       name = "Terminator";
     };
-    settings."org/gnome/shell" = {
+    "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = with pkgs.gnomeExtensions; [
         caffeine.extensionUuid
@@ -79,7 +95,7 @@
         notifications-alert-on-user-menu.extensionUuid
       ];
     };
-    settings."org/gnome/shell/extensions/dash-to-panel" = {
+    "org/gnome/shell/extensions/dash-to-panel" = {
       panel-sizes = "{\"0\":36}";
       panel-positions = "{\"0\":\"RIGHT\"}";
       panel-element-positions = ''
@@ -91,12 +107,12 @@
       scroll-icon-action = "PASS_THROUGH";
       scroll-panel-action = "CHANGE_VOLUME";
     };
-    settings."org/gnome/shell/extensions/date-menu-formatter" = {
+    "org/gnome/shell/extensions/date-menu-formatter" = {
       pattern = "MM\ndd\nyy\nE\nHH\nmm\nss";
       text-align = "right";
       update-level = "2";
     };
-    settings."org/gnome/shell/extensions/caffeine" = {
+    "org/gnome/shell/extensions/caffeine" = {
       indicator-position-max = "2";
       restore-state = true;
       show-indicator = "always";
