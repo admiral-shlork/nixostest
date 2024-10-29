@@ -40,6 +40,7 @@
     gnomeExtensions.date-menu-formatter
     gnomeExtensions.night-theme-switcher
     gnomeExtensions.notifications-alert-on-user-menu
+    home-manager
     terminator
     vim
     vscodium
