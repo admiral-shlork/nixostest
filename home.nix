@@ -33,10 +33,11 @@
       default-visible-columns = "['name', 'size', 'type', 'owner', 'group', 'permissions', 'date_modified']";
       use-tree-view = true;
     };
-    settings."org/gnome/destkop/wm/preferences" = {
+    settings."org/gnome/desktop/wm/preferences" = {
       button-layout = "close:appmenu";
       action-right-click-titlebar = "minimize";
       action-middle-click-titlebar = "lower";
+      num-workspaces = "1";
     };
     settings."org/gnome/shell" = {
       disable-user-extensions = false;
