@@ -26,7 +26,7 @@
             ./configuration.nix
             home-manager.nixosModules.home-manager {
               home-manager = {
-                users.whatever = import "./home.nix";
+                users.whatever = import ./home.nix;
                 useGlobalPkgs = true;
                 useUserPackages = true;
               };
