@@ -24,11 +24,16 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
     git
-    vscodium
+    gnomeExtensions.caffeine
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.date-menu-formatter
+    gnomeExtensions.night-theme-switcher
+    gnomeExtensions.notifications-alert-on-user-menu
     terminator
+    vim
+    vscodium
+    wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
