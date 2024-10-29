@@ -55,11 +55,11 @@
       show-delete-permanently = true;
     };
     "org/gnome/nautilus/icon-view" = {
-      captions = "['size', 'type', 'none']";
+      captions = [ "size" "type" "none" ];
     };
     "org/gnome/nautilus/list-view" = {
-      default-column-order = "['name', 'size', 'type', 'owner', 'group', 'permissions', 'date_modified', 'date_accessed', 'date_created', 'recency', 'detailed_type']";
-      default-visible-columns = "['name', 'size', 'type', 'owner', 'group', 'permissions', 'date_modified']";
+      default-column-order = [ "name" "size" "type" "owner" "group" "permissions" "date_modified" "date_accessed" "date_created" "recency" "detailed_type" ];
+      default-visible-columns = [ "name" "size" "type" "owner" "group" "permissions" "date_modified"] ;
       use-tree-view = true;
     };
     "org/gnome/desktop/notifications" = {
