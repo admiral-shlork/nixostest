@@ -153,4 +153,16 @@
       show-notifications = false;
     };
   };
+
+  programs.starship.enable = true;
+  programs.starship.settings = {
+    aws.disabled = true;
+    battery.disabled = true;
+    container.disabled = true;
+    dotnet.disabled = true;
+    java.disabled = true;
+    nodejs.disabled = true;
+    directory.truncate_to_repo = false;
+    git_status.stashed = "";
+  };
 }
