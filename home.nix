@@ -26,6 +26,7 @@
       # librewolf
       # lutris
       # megasync
+      nerdfonts
       # obsidian
       # parsec-bin
       # protonvpn-gui
