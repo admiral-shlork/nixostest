@@ -41,6 +41,15 @@
       success_symbol = "[➜](bold green) ";
       error_symbol = "[✗](bold red) ";
     };
+    cmd_duration = {
+      min_time = 2000;
+      format = "⏱ [$duration]($style) ";
+      style = "yellow bold";
+      show_milliseconds = false;
+      disabled = false;
+      show_notifications = false;
+      min_time_to_notify = 45000;
+    };
     directory = {
       disabled = false;
       fish_style_pwd_dir_length = 0;
@@ -51,7 +60,7 @@
       repo_root_format = "[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ";
       style = "yellow bold bg:0xDA627D";
       truncate_to_repo = true;
-      truncation_length = 30;
+      truncation_length = 8;
       truncation_symbol = "…/";
       use_logical_path = true;
       use_os_path_sep = true;
