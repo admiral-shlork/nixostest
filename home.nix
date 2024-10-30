@@ -43,11 +43,25 @@
       # telegram-desktop
       # thunderbird
       # ungoogled-chromium
+      # winbox
       # virtualbox
       # vivaldi
       # veracrypt
       # vlc
       # yacreader
     ];
+    # shellAliases = {
+    #   ll="ls -alhF";
+    #   la="ls -A";
+    #   l="ls -CF";
+    # };
+  };
+  programs.bash = {
+    enable = true;
+    initExtra = ''
+      alias ll='ls -alhF'
+      alias la='ls -A'
+      alias l='ls -CF'
+    '';
   };
 }

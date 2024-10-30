@@ -1,8 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  programs.bash.enable = true;
-  
+  programs.bash.enable = true;  
   # visit: https://gist.github.com/s-a-c/0e44dc7766922308924812d4c019b109
   # for Starship configuration in Nix
   programs.starship.enable = true;
@@ -109,7 +108,7 @@
       disabled = false;
     };
     time = {
-      format = "[$symbol $time]($style) ";
+      format = "[$time]($style) ";
       style = "yellow bold bg:0x33658A";
       use_12hr = false;
       disabled = false;
