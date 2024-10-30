@@ -46,22 +46,6 @@
   };
 
   dconf.settings = {
-    "org/gnome/clocks" = {
-      world-clocks = [
-         ([ 
-          (lib.hm.gvariant.mkDictionaryEntry ["location" (lib.hm.gvariant.mkVariant (lib.hm.gvariant.mkTuple [
-            (lib.hm.gvariant.mkUint32 2)
-            (lib.hm.gvariant.mkVariant (lib.hm.gvariant.mkTuple [
-              "New York"
-              "KNYC"
-              true
-              [(lib.hm.gvariant.mkTuple [(0.71180344078725644) (-1.2909618758762367)])]
-              [(lib.hm.gvariant.mkTuple [(0.71059804659265924) (-1.2916478949920254)])]
-            ]))
-          ]))])
-        ])
-      ];  
-    };
     "org/gnome/system/location" = {
       enabled = true;
       max-accuracy-level = "exact";
@@ -165,6 +149,6 @@
     java.disabled = true;
     nodejs.disabled = true;
     directory.truncate_to_repo = false;
-    git_status.stashed = "";
+    git_status.stashed = "$";
   };
 }
