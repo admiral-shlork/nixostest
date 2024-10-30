@@ -121,7 +121,7 @@
     git_branch = {
       format = "[$symbol$branch(:$remote_branch)]($style) ";
       symbol = " ";
-      style = "bold purple bg:0xFCA17D";
+      style = "bold white bg:0xFCA17D";
       truncation_length = 9223372036854775807;
       truncation_symbol = "…";
       only_attached = false;
