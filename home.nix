@@ -154,6 +154,7 @@
     };
   };
 
+  programs.bash.enable = true;
   programs.starship.enable = true;
   programs.starship.settings = {
     aws.disabled = true;
