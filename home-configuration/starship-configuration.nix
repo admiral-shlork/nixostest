@@ -7,7 +7,7 @@
   programs.starship.enable = true;
   programs.starship.settings = {
     add_newline = true;
-    format = "$time$shlvl$shell$username[@](bright-white bold)$hostname[:](bright-white bold)$battery$container$docker_context$nix_shell$directory$sudo$git_branch$git_commit$git_metrics$git_state$git_status$jobs$cmd_duration$character";
+    format = "$time$shlvl$shell$username[@](bright-white bold)$hostname[:](bright-white bold)$battery$container$docker_context$nix_shell$directory$sudo$git_branch$git_commit$git_metrics$git_state$git_status$jobs$cmd_duration$line_break$character";
     shlvl = {
       disabled = false;
       symbol = "ﰬ";
@@ -34,7 +34,7 @@
       ];
     };
     character = {
-      format = "$symbol ";
+      format = "$symbol";
       vicmd_symbol = "[❮](bold green)";
       disabled = false;
       success_symbol = "[➜](bold green) ";
@@ -83,6 +83,9 @@
       truncation_symbol = "…/";
       use_logical_path = true;
       use_os_path_sep = true;
+    };
+    line_break = {
+      disabled = false;
     };
     username = {
       format = "[$user]($style)";
