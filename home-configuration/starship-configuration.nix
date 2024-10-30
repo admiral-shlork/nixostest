@@ -8,7 +8,7 @@
   programs.starship.enable = true;
   programs.starship.settings = {
     add_newline = true;
-    format = "$shlvl$shell$username$hostname$battery$nix_shell$git_branch$git_commit$git_metrics$git_state$git_status$directory$jobs$cmd_duration$character";
+    format = "$time$shlvl$shell$username[@](bright-white bold)$hostname[:](bright-white bold)$battery$container$docker_context$nix_shell$directory$sudo$git_branch$git_commit$git_metrics$git_state$git_status$jobs$cmd_duration$character";
     shlvl = {
       disabled = false;
       symbol = "ﰬ";
@@ -50,23 +50,43 @@
       show_notifications = false;
       min_time_to_notify = 45000;
     };
+    container = {
+      format = "[$symbol [$name]]($style) ";
+      symbol = "⬢";
+      style = "red bold dimmed";
+      disabled = false;
+    };
+    docker_context = {
+      format = "[$symbol$context]($style) ";
+      style = "blue bold bg:0x06969A";
+      symbol = " ";
+      only_with_files = true;
+      disabled = false;
+      detect_extensions = [];
+      detect_files = [
+        "docker-compose.yml"
+        "docker-compose.yaml"
+        "Dockerfile"
+      ];
+      detect_folders = [];
+    };
     directory = {
       disabled = false;
       fish_style_pwd_dir_length = 0;
       format = "[$path]($style)[$read_only]($read_only_style) ";
       home_symbol = "~";
-      read_only = " ";
+      read_only = " 🔴";
       read_only_style = "red";
       repo_root_format = "[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ";
-      style = "yellow bold bg:0xDA627D";
-      truncate_to_repo = true;
+      style = "bright-white bold bg:0xDA627D";
+      truncate_to_repo = false;
       truncation_length = 8;
       truncation_symbol = "…/";
       use_logical_path = true;
       use_os_path_sep = true;
     };
     username = {
-      format = "[$user]($style) ";
+      format = "[$user]($style)";
       show_always = true;
       style_root = "red bold bg:0x9A348E";
       style_user = "blue bold bg:0x9A348E";
@@ -74,10 +94,29 @@
     };
     hostname = {
       disabled = false;
-      format = "[$ssh_symbol](blue dimmed bold)[$hostname]($style) ";
+      format = "[$ssh_symbol](blue dimmed bold)[$hostname]($style)";
       ssh_only = false;
-      style = "green dimmed bold";
+      style = "green bold";
       trim_at = ".";
+    };
+    jobs = {
+      threshold = 1;
+      symbol_threshold = 0;
+      number_threshold = 2;
+      format = "[$symbol$number]($style) ";
+      symbol = "✦";
+      style = "bold blue";
+      disabled = false;
+    };
+    time = {
+      format = "[$symbol $time]($style) ";
+      style = "yellow bold bg:0x33658A";
+      use_12hr = false;
+      disabled = false;
+      utc_time_offset = "local";
+      # time_format = "%R"; # Hour:Minute Format;
+      time_format = "%T"; # Hour:Minute:Seconds Format;
+      time_range = "-";
     };
     git_branch = {
       format = "[$symbol$branch(:$remote_branch)]($style) ";
@@ -103,7 +142,7 @@
       added_style = "bold green";
       deleted_style = "bold red";
       only_nonzero_diffs = true;
-      format = "([+$added]($added_style) )([-$deleted]($deleted_style) )";
+      format = "([+$added]($added_style))([-$deleted]($deleted_style) )";
       disabled = false;
     };
     git_state = {
@@ -135,6 +174,12 @@
       untracked = "🤷";
       up_to_date = "✓";
     };
-
+    sudo = {
+      format = "[as $symbol]($style)";
+      symbol = "🧙 ";
+      style = "bold blue";
+      allow_windows = false;
+      disabled = true;
+    };
   };
 }
