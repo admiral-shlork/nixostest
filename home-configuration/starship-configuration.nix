@@ -7,14 +7,8 @@
   # for Starship configuration in Nix
   programs.starship.enable = true;
   programs.starship.settings = {
-    aws.disabled = true;
-    battery.disabled = true;
-    container.disabled = true;
-    dotnet.disabled = true;
-    java.disabled = true;
-    nodejs.disabled = true;
-    directory.truncate_to_repo = false;
-    format = "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
+    add_newline = true;
+    format = "$shlvl$shell$username$hostname$battery$nix_shell$git_branch$git_commit$git_metrics$git_state$git_status$directory$jobs$cmd_duration$character";
     shlvl = {
       disabled = false;
       symbol = "ﰬ";
@@ -25,11 +19,48 @@
       format = "";
       bash_indicator = "(bright-white) ";
     };
+    battery = {
+      format = "[$symbol$percentage]($style) ";
+      charging_symbol = " ";
+      discharging_symbol = " ";
+      empty_symbol = " ";
+      full_symbol = " ";
+      unknown_symbol = " ";
+      disabled = false;
+      display = [
+        {
+          style = "red bold";
+          threshold = 10;
+        }
+      ];
+    };
+    character = {
+      format = "$symbol ";
+      vicmd_symbol = "[❮](bold green)";
+      disabled = false;
+      success_symbol = "[➜](bold green) ";
+      error_symbol = "[✗](bold red) ";
+    };
+    directory = {
+      disabled = false;
+      fish_style_pwd_dir_length = 0;
+      format = "[$path]($style)[$read_only]($read_only_style) ";
+      home_symbol = "~";
+      read_only = " ";
+      read_only_style = "red";
+      repo_root_format = "[$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ";
+      style = "yellow bold bg:0xDA627D";
+      truncate_to_repo = true;
+      truncation_length = 30;
+      truncation_symbol = "…/";
+      use_logical_path = true;
+      use_os_path_sep = true;
+    };
     username = {
       format = "[$user]($style) ";
       show_always = true;
       style_root = "red bold bg:0x9A348E";
-      style_user = "yellow bold bg:0x9A348E";
+      style_user = "blue bold bg:0x9A348E";
       disabled = false;
     };
     hostname = {
