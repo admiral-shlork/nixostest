@@ -91,7 +91,8 @@
         show-screenshot-ui = [];
     };
     "org/gnome/shell/extensions/dash-to-panel" = {
-      panel-sizes = "{\"0\":36}";
+      panel-sizes = "{\"0\":34}";
+      appicon-padding = 1;
       panel-positions = "{\"0\":\"RIGHT\"}";
       panel-element-positions = ''
       {"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"}]}

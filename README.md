@@ -30,6 +30,12 @@ git clone ${clone_url_here}
 sudo nixos-install --no-root-passwd --root /mnt  --flake .#hostname
 ```
 
+6. Set a password for the user:
+
+```bash
+nixos-enter --root /mnt -c 'passwd whatever'
+```
+
 ## Some useful Nix commands:
 
 - Apply configuration from a Flake and rebuild the OS
