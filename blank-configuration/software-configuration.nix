@@ -11,6 +11,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "pl";
@@ -32,6 +34,7 @@
   environment.systemPackages = with pkgs; [
     git
     gnome.dconf-editor
+    gnomeExtensions.appindicator
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-panel
     gnomeExtensions.date-menu-formatter
