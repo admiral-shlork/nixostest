@@ -1,6 +1,20 @@
 { config, pkgs, lib, ... }:
 
 {
+  nixpkgs.overlays = [
+    # GNOME 46: triple-buffering-v4-46
+    (final: prev: {
+      mutter = prev.mutter.overrideAttrs (old: {
+        src = pkgs.fetchFromGitLab  {
+          domain = "gitlab.gnome.org";
+          owner = "vanvugt";
+          repo = "mutter";
+          rev = "triple-buffering-v4-46";
+          hash = "sha256-C2VfW3ThPEZ37YkX7ejlyumLnWa9oij333d5c4yfZxc=";
+        };
+      });
+    })
+  ];
 
   dconf.settings = {
     "org/gnome/system/location" = {
@@ -20,6 +34,10 @@
       default-column-order = [ "name" "size" "type" "owner" "group" "permissions" "date_modified" "date_accessed" "date_created" "recency" "detailed_type" ];
       default-visible-columns = [ "name" "size" "type" "owner" "group" "permissions" "date_modified"] ;
       use-tree-view = true;
+    };
+    "org/gnome/destkop/background" = {
+      picture-options = "none";
+      primary-color = "#282828";
     };
     "org/gnome/desktop/notifications" = {
       show-in-lock-screen = false;
@@ -82,6 +100,8 @@
       dot-style-unfocused = "SQUARES";
       scroll-icon-action = "PASS_THROUGH";
       scroll-panel-action = "CHANGE_VOLUME";
+      trans-panel-opacity = 0.00;
+      trans-use-custom-opacity = true;
     };
     "org/gnome/shell/extensions/date-menu-formatter" = {
       pattern = "MM\ndd\nyy\nE\nHH\nmm\nss";
