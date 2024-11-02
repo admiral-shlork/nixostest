@@ -4,7 +4,12 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   virtualisation.virtualbox.guest.enable = true;
 
+  # intel CPU
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  # wifi
+  hardware.enableAllFirmware = true;
+  hardware.firmware = [ pkgs.linux-firmware ];
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

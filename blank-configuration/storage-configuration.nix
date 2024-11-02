@@ -5,9 +5,8 @@ boot = {
   # Bootloader
   initrd.availableKernelModules = [ "ahci" "ata_piix" "ohci_pci" "ehci_pci" "xhci_pci" "nvme" "usb_storage" "sd_mod" "sr_mod" "rtsx_pci_sdmmc" ];
   initrd.kernelModules = [ "dm-snapshot" ];
-  kernelModules = [ "kvm-intel" ];
+  kernelModules = [ "kvm-intel" "iwlwifi" ];
   kernelPackages = pkgs.linuxPackages_latest;
-  extraModulePackages = [ ];
   loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
