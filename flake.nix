@@ -32,7 +32,7 @@
                 useUserPackages = true;
               };
             }
-            nixos-hardware.nixosModules.lenovo-thinkpad-t460
+            nixos-hardware.nixosModules.lenovo-thinkpad-t460s
           ];
         };
       };

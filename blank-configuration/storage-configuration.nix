@@ -3,9 +3,10 @@
 {
 boot = {
   # Bootloader
-  initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+  initrd.availableKernelModules = [ "ahci" "ata_piix" "ohci_pci" "ehci_pci" "xhci_pci" "nvme" "usb_storage" "sd_mod" "sr_mod" "rtsx_pci_sdmmc" ];
   initrd.kernelModules = [ "dm-snapshot" ];
   kernelModules = [ "kvm-intel" ];
+  kernelPackages = pkgs.linuxPackages_latest;
   extraModulePackages = [ ];
   loader = {
     systemd-boot.enable = true;
