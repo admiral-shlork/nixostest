@@ -21,7 +21,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations = {
-        nixostest = lib.hosaka {
+        hosaka = lib.nixosSystem {
           inherit system;
           modules = [ 
             ./configuration.nix
