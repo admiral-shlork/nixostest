@@ -11,7 +11,7 @@
     ensureDefaultPrinter = brl2370d;
     ensurePrinters = [
       {
-        name = "Brother HL-L2370DN";
+        name = brl2370d;
         description = "Brother HL-L2370DN Laser Printer";
         location = "yes";
         deviceUri = "ipp://10.0.0.181";
