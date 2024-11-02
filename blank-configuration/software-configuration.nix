@@ -13,6 +13,12 @@
 
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
 
+  # printing
+  services.printing = {
+    enable = true;
+    drivers = [brlaser_nixpkgs.legacyPackages.x86_64-linux.brlaser];
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "pl";

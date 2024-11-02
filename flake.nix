@@ -6,6 +6,7 @@
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    brlaser_nixpkgs.url = "github:ahydronous/nixpkgs/e4b52e42c6f6ededdf64a412393fc3d6bd681555";
 
     # use the following for unstable:
     # nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -33,6 +34,9 @@
               };
             }
             nixos-hardware.nixosModules.lenovo-thinkpad-t460s
+            _module.args = {
+              inherit brlaser_nixpkgs;
+            };
           ];
         };
       };
