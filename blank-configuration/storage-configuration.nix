@@ -7,6 +7,7 @@ boot = {
   initrd.kernelModules = [ "dm-snapshot" ];
   kernelModules = [ "kvm-intel" "iwlwifi" ];
   kernelPackages = pkgs.linuxPackages_latest;
+  extraModulePackages = [ ];
   loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
