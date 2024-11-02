@@ -17,10 +17,12 @@
   ];
 
   dconf.settings = {
+    # Enable location
     "org/gnome/system/location" = {
       enabled = true;
       max-accuracy-level = "exact";
     };
+    # Nautilus preferences
     "org/gnome/nautilus/preferences" = {
       date-time-format = "datailed";
       default-folder-view = "list-view";
@@ -35,29 +37,36 @@
       default-visible-columns = [ "name" "size" "type" "owner" "group" "permissions" "date_modified"] ;
       use-tree-view = true;
     };
+    # Desktop background
     "org/gnome/desktop/background" = {
       picture-options = "none";
       primary-color = "#282828";
     };
+    # Disable lock screen notifications
     "org/gnome/desktop/notifications" = {
       show-in-lock-screen = false;
     };
+    # Show weekday in calendar
     "org/gnome/desktop/calendar" = {
       show-weekdate = true;
     };
+    # Titlebar customisation, set number of workspaces to 1
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "close:appmenu";
       action-right-click-titlebar = "minimize";
       action-middle-click-titlebar = "lower";
       num-workspaces = 1;
     };
+    # Enable active edges for window tiling
     "org/gnome/mutter" = {
       edge-tiling = true;
     };
+    # Enable nightlight
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
       night-light-schedule-automatic = true;
     };
+    # Keyboard bindings
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" ];
     };
@@ -76,6 +85,10 @@
       command = "/etc/profiles/per-user/whatever/bin/gnome-screenshot --interactive";
       name = "Screenshot";
     };
+    "org/gnome/shell/keybindings" = {
+        show-screenshot-ui = [];
+    };
+    # Enabled extensions
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = with pkgs.gnomeExtensions; [
@@ -87,9 +100,7 @@
         appindicator.extensionUuid
       ];
     };
-    "org/gnome/shell/keybindings" = {
-        show-screenshot-ui = [];
-    };
+    # Dash-to-panel extension preferences
     "org/gnome/shell/extensions/dash-to-panel" = {
       panel-sizes = "{\"0\":34}";
       appicon-padding = 1;
@@ -105,11 +116,13 @@
       trans-panel-opacity = 0.00;
       trans-use-custom-opacity = true;
     };
+    # Date-menu-formatter preferences
     "org/gnome/shell/extensions/date-menu-formatter" = {
       pattern = "MM\ndd\nyy\nE\nHH\nmm\nss";
       text-align = "right";
       update-level = "2";
     };
+    # Caffeine preferences
     "org/gnome/shell/extensions/caffeine" = {
       indicator-position-max = "2";
       restore-state = true;
