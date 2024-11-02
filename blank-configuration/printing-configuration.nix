@@ -5,15 +5,18 @@
     drivers = [brlaser_nixpkgs.legacyPackages.x86_64-linux.brlaser];
   };
 
-  hardware.printers = {
-    ensureDefaultPrinter = "Brother HL-L2370DN";
+  hardware.printers = let
+    brl2370d = "Brother_HL-L2370DN";
+  in {
+    ensureDefaultPrinter = brl2370d;
     ensurePrinters = [
       {
         name = "Brother HL-L2370DN";
-        description = "Brother HL-L2370DN";
-        #deviceUri = "dnssd://Brother%20HL-L2370DN%20series._ipp._tcp.local/?uuid=e3248000-80ce-11db-8000-b42200bfd1de";
-        deviceUri = "socket://10.0.0.181";
+        description = "Brother HL-L2370DN Laser Printer";
+        location = "yes";
+        deviceUri = "ipp://10.0.0.181";
         model = "drv:///brlaser.drv/brl2370d.ppd";
+        ppdOptions.PageSize = "A4";
       }
     ];
   };
