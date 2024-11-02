@@ -1,7 +1,7 @@
 # Help is available in the configuration.nix(5) man page and 
 # in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, brlaser_nixpkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   # Enable the X11 windowing system.
@@ -12,12 +12,6 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   services.udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
-
-  # printing
-  services.printing = {
-    enable = true;
-    drivers = [brlaser_nixpkgs.legacyPackages.x86_64-linux.brlaser];
-  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
