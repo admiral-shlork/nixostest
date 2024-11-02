@@ -6,7 +6,7 @@
   };
 
   hardware.printers = {
-    ensureDefaultPrinter = "Brother_HL-L2370DN";
+    ensureDefaultPrinter = "Brother HL-L2370DN";
     ensurePrinters = [
       {
         name = "Brother HL-L2370DN";
