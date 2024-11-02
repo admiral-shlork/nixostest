@@ -46,8 +46,8 @@ sudo nixos-rebuild switch --flake .#hostname
 
 - Remove older generations from the bootloader
 ```bash
-nix-collect-garbage --delete-older-than 8h
-sudo nixos-rebuild boot
+nix-collect-garbage --delete-older-than 1d
+sudo nixos-rebuild boot --flake .#hostname
 ```
 
 
