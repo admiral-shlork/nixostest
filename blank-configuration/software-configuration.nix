@@ -42,6 +42,7 @@
     gnomeExtensions.night-theme-switcher
     gnomeExtensions.notifications-alert-on-user-menu
     home-manager
+    nh
     terminator
     vim
     vscodium
