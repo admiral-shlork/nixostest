@@ -34,9 +34,12 @@
               };
             }
             nixos-hardware.nixosModules.lenovo-thinkpad-t460s
-            _module.args = {
-              inherit brlaser_nixpkgs;
-            };
+            { 
+              _module.args = {
+                inherit brlaser_nixpkgs;
+              };
+            }
+
           ];
         };
       };
