@@ -17,45 +17,40 @@
       # calibre
       # deadbeef-with-plugins
       # deluge-gtk
-      # discord
-      # docker
+      discord
+      docker
       # dropbox
       # easytag
-      # element-desktop
-      # evince
-      # firefox-devedition
+      element-desktop
+      evince
+      firefox-devedition
       # gimp
       gnome.gnome-screenshot
-      # jetbrains.pycharm-community
-      # keepassxc
-      # libreoffice
-      # librewolf
-      # lutris
-      # mangohud
-      # megasync
+      jetbrains.pycharm-community
+      keepassxc
+      libreoffice
+      librewolf
+      lutris
+      mangohud
+      megasync
       nerdfonts
-      # obsidian
+      obsidian
       # parsec-bin
-      # protonvpn-gui
-      # signal-desktop
+      protonvpn-gui
+      signal-desktop
       # soulseekqt
       # soundconverter
-      # steam
-      # telegram-desktop
-      # thunderbird
-      # ungoogled-chromium
-      # winbox
-      # virtualbox
+      steam
+      telegram-desktop
+      thunderbird
+      ungoogled-chromium
+      winbox
+      virtualbox
       # vivaldi
-      # veracrypt
-      # vlc
+      veracrypt
+      vlc
       # yacreader
     ];
-    # shellAliases = {
-    #   ll="ls -alhF";
-    #   la="ls -A";
-    #   l="ls -CF";
-    # };
   };
   programs.bash = {
     enable = true;

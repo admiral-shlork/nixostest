@@ -1,7 +1,7 @@
 { config, pkgs, lib, modulesPath, ... }:
 
 {
-  networking.hostName = "nixostest"; # Define your hostname.
+  networking.hostName = "hosaka"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
