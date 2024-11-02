@@ -14,7 +14,7 @@
     # nixpkgs.url = "nixpkgs/{BRANCH-NAME}";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }:
     let
       system = "x86_64-linux";
       lib = nixpkgs.lib;
