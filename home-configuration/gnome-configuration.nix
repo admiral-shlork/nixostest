@@ -60,11 +60,22 @@
     # Enable active edges for window tiling
     "org/gnome/mutter" = {
       edge-tiling = true;
+      idle-dim = false;
+      power-button-action = "interactive";
+      power-saver-profile-on-low-battery = false;
+      sleep-inactive-ac-timeout = 900;
+      sleep-inactive-ac-type = "nothing";
+      sleep-inactive-battery-timeout = 1800;
+      sleep-inactive-battery-type = "suspend";
     };
     # Enable nightlight
     "org/gnome/settings-daemon/plugins/color" = {
       night-light-enabled = true;
       night-light-schedule-automatic = true;
+    };
+    # Power settings
+    "org/gnome/settings-daemon/plugins/power" = {
+      power-button-action = "interactive";
     };
     # Keyboard bindings
     "org/gnome/settings-daemon/plugins/media-keys" = {
@@ -87,6 +98,10 @@
     };
     "org/gnome/shell/keybindings" = {
         show-screenshot-ui = [];
+    };
+    "org/gnome/mutter/keybindings" = {
+      toggle-tiled-left = "<Alt><Super>j";
+      toggle-tiled-right = "<Alt><Super>l";
     };
     # Enabled extensions
     "org/gnome/shell" = {
