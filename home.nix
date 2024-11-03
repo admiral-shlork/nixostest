@@ -37,6 +37,8 @@
       obsidian
       # parsec-bin
       protonvpn-gui
+      python3
+      python311Packages.pip
       signal-desktop
       # soulseekqt
       # soundconverter
