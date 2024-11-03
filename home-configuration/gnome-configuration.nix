@@ -66,9 +66,20 @@
       night-light-enabled = true;
       night-light-schedule-automatic = true;
     };
+    # Power settings
+    "org/gnome/settings-daemon/plugins/power" = {
+      idle-dim = false;
+      power-button-action = "interactive";
+      power-saver-profile-on-low-battery = false;
+      sleep-inactive-ac-timeout = 900;
+      sleep-inactive-ac-type = "nothing";
+      sleep-inactive-battery-timeout = 1800;
+      sleep-inactive-battery-type = "suspend";
+    };
     # Keyboard bindings
     "org/gnome/settings-daemon/plugins/media-keys" = {
       custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" ];
+      screensaver = [ "<Control><Super>q" ];
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>e";
@@ -87,6 +98,14 @@
     };
     "org/gnome/shell/keybindings" = {
         show-screenshot-ui = [];
+        toggle-application-view = [ "<Super>space" ];
+    };
+    "org/gnome/mutter/keybindings" = {
+      toggle-tiled-left = [ "<Alt><Super>j" ];
+      toggle-tiled-right = [ "<Alt><Super>l" ];
+    };
+    "org/gnome/desktop/wm/keybindings" = {
+      toggle-maximized = [ "<Alt><Super>k" ];
     };
     # Enabled extensions
     "org/gnome/shell" = {
