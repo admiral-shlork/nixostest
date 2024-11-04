@@ -153,5 +153,9 @@
       two-finger-scrolling-enable = true;
       natural-scroll = false;
     };
+    # Fractional scaling in Gnome
+    "org/gnome/mutter" = {
+      experimental-features = [ "scale-monitor-framebuffer" ];
+    };
   };  
 }
