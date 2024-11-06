@@ -49,7 +49,10 @@ sudo nixos-rebuild switch --flake .#hostname
 nix-collect-garbage --delete-older-than 1d
 sudo nixos-rebuild boot --flake .#hostname
 ```
-
+```bash
+nh clean all --keep <integer>
+sudo nixos-rebuild boot --flake .#hostname
+```
 
 - Update the flake.lock file and rebuild the system
 ```bash

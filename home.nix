@@ -24,6 +24,7 @@
       element-desktop
       evince
       firefox-devedition
+      floorp
       # gimp
       gnome.gnome-screenshot
       jetbrains.pycharm-community
