@@ -17,10 +17,9 @@
   ];
 
   dconf.settings = {
-    # Enable location
+    # Disable location
     "org/gnome/system/location" = {
-      enabled = true;
-      max-accuracy-level = "exact";
+      enabled = false;
     };
     # Nautilus preferences
     "org/gnome/nautilus/preferences" = {
@@ -42,9 +41,16 @@
       picture-options = "none";
       primary-color = "#282828";
     };
-    # Disable lock screen notifications
+    # Disable lock screen and notifications
     "org/gnome/desktop/notifications" = {
       show-in-lock-screen = false;
+      show-banners = false;
+    };
+    "org/gnome/desktop/lockdown".disable-lock-screen = true;
+    "org/gnome/desktop/session".idle-delay = lib.hm.gvariant.mkUint32 0; # Disable screen blanking
+    "org/gnome/desktop/screensaver" = {
+      lock-enabled = false;
+      idle-activation-enabled = false;
     };
     # Show weekday in calendar
     "org/gnome/desktop/calendar" = {
@@ -61,51 +67,27 @@
     "org/gnome/mutter" = {
       edge-tiling = true;
     };
-    # Enable nightlight
+    # Disable nightlight
     "org/gnome/settings-daemon/plugins/color" = {
-      night-light-enabled = true;
-      night-light-schedule-automatic = true;
+      night-light-enabled = false;
+      night-light-schedule-automatic = false;
     };
     # Power settings
     "org/gnome/settings-daemon/plugins/power" = {
       idle-dim = false;
       power-button-action = "interactive";
-      power-saver-profile-on-low-battery = false;
       sleep-inactive-ac-timeout = 900;
       sleep-inactive-ac-type = "nothing";
-      sleep-inactive-battery-timeout = 1800;
-      sleep-inactive-battery-type = "suspend";
     };
     # Keyboard bindings
     "org/gnome/settings-daemon/plugins/media-keys" = {
-      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/" "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/" ];
+      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
       screensaver = [ "<Control><Super>q" ];
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>e";
       command = "/run/current-system/sw/bin/nautilus --new-window";
       name = "Nautilus";
-    };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-      binding = "<Super>w";
-      command = "/run/current-system/sw/bin/terminator";
-      name = "Terminator";
-    };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-      binding = "Print";
-      command = "/etc/profiles/per-user/whatever/bin/gnome-screenshot --interactive";
-      name = "Screenshot";
-    };
-    "org/gnome/shell/keybindings" = {
-        show-screenshot-ui = [];
-        toggle-application-view = [ "<Super>space" ];
-    };
-    "org/gnome/mutter/keybindings" = {
-      toggle-tiled-left = [ "<Alt><Super>j" ];
-      toggle-tiled-right = [ "<Alt><Super>l" ];
-    };
-    "org/gnome/desktop/wm/keybindings" = {
-      toggle-maximized = [ "<Alt><Super>k" ];
     };
     # Enabled extensions
     "org/gnome/shell" = {
@@ -114,18 +96,17 @@
         caffeine.extensionUuid
         dash-to-panel.extensionUuid
         date-menu-formatter.extensionUuid
-        night-theme-switcher.extensionUuid
-        notifications-alert-on-user-menu.extensionUuid
         appindicator.extensionUuid
+        no-overview.extensionUuid
       ];
     };
     # Dash-to-panel extension preferences
     "org/gnome/shell/extensions/dash-to-panel" = {
       panel-sizes = "{\"0\":34}";
       appicon-padding = 1;
-      panel-positions = "{\"0\":\"RIGHT\"}";
+      panel-positions = "{\"0\":\"TOP\"}";
       panel-element-positions = ''
-      {"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"},{"element":"dateMenu","visible":true,"position":"stackedBR"}]}
+      {"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"dateMenu","visible":true,"position":"centered"},{"element":"centerBox","visible":false,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"systemMenu","visible":true,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}
       '';
       dot-position = "BOTTOM";
       dot-style-focused = "SQUARES";
@@ -137,7 +118,7 @@
     };
     # Date-menu-formatter preferences
     "org/gnome/shell/extensions/date-menu-formatter" = {
-      pattern = "MM\ndd\nyy\nE\nHH\nmm\nss";
+      pattern = "MMM dd yy, EEE - HH:mm:ss";
       text-align = "right";
       update-level = "2";
     };
@@ -148,5 +129,7 @@
       show-indicator = "always";
       show-notifications = false;
     };
+    # Sound preferences
+    "org/gnome/desktop/sound".allow-volume-above-100-percent = true;
   };  
 }

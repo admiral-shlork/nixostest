@@ -39,8 +39,7 @@
     gnomeExtensions.caffeine
     gnomeExtensions.dash-to-panel
     gnomeExtensions.date-menu-formatter
-    gnomeExtensions.night-theme-switcher
-    gnomeExtensions.notifications-alert-on-user-menu
+    gnomeExtensions.no-overview
     home-manager
     nh
     terminator
