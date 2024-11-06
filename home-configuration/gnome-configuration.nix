@@ -118,7 +118,7 @@
     };
     # Date-menu-formatter preferences
     "org/gnome/shell/extensions/date-menu-formatter" = {
-      pattern = "MMM dd yy, EEE - HH:mm:ss";
+      pattern = "EEEE - d MMMM, yyyy - HH:mm:ss";
       text-align = "right";
       update-level = "2";
     };
