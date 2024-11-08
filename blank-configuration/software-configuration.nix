@@ -19,8 +19,8 @@
     variant = "";
   };
 
-  # Install firefox.
   programs.firefox.enable = true;
+  programs.direnv.enable = true;
 
   # Define your user-specific home configuration
   users.users.whatever = {
@@ -32,6 +32,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    appimage-run
     brlaser
     git
     gnome.dconf-editor
@@ -40,7 +41,6 @@
     gnomeExtensions.dash-to-panel
     gnomeExtensions.date-menu-formatter
     gnomeExtensions.night-theme-switcher
-    gnomeExtensions.notifications-alert-on-user-menu
     home-manager
     nh
     terminator

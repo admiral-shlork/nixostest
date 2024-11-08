@@ -48,6 +48,7 @@
       thunderbird
       ungoogled-chromium
       winbox
+      wine
       virtualbox
       # vivaldi
       veracrypt
