@@ -115,7 +115,6 @@
         dash-to-panel.extensionUuid
         date-menu-formatter.extensionUuid
         night-theme-switcher.extensionUuid
-        notifications-alert-on-user-menu.extensionUuid
         appindicator.extensionUuid
       ];
     };
