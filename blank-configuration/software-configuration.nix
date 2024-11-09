@@ -41,6 +41,7 @@
     gnomeExtensions.dash-to-panel
     gnomeExtensions.date-menu-formatter
     gnomeExtensions.night-theme-switcher
+    gnomeExtensions.no-overview
     home-manager
     nh
     terminator

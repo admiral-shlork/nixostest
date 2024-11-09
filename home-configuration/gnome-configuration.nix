@@ -111,11 +111,12 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = with pkgs.gnomeExtensions; [
+        appindicator.extensionUuid
         caffeine.extensionUuid
         dash-to-panel.extensionUuid
         date-menu-formatter.extensionUuid
         night-theme-switcher.extensionUuid
-        appindicator.extensionUuid
+        no-overview.extensionUuid
       ];
     };
     # Dash-to-panel extension preferences
