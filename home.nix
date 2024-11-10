@@ -19,7 +19,7 @@
       # deluge-gtk
       discord
       docker
-      # dropbox
+      dropbox
       # easytag
       element-desktop
       evince
@@ -50,7 +50,7 @@
       winbox
       wine
       virtualbox
-      # vivaldi
+      vivaldi
       veracrypt
       vlc
       # yacreader
