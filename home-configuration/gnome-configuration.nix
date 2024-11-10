@@ -122,6 +122,7 @@
     # Dash-to-panel extension preferences
     "org/gnome/shell/extensions/dash-to-panel" = {
       panel-sizes = "{\"0\":34}";
+      appicon-margin = 3;
       appicon-padding = 1;
       panel-positions = "{\"0\":\"RIGHT\"}";
       panel-element-positions = ''
